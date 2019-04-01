@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+  body{
+    background-color: aqua;
+  }
+    </style>
+  <title>Key Detection</title>
+  <p>psssttt, try typing 'cornify'</p>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+  const pressed = [];
+  const secretCode = 'cornify';
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length -1, pressed.length - secretCode.length)
+    if(pressed.join('').includes(secretCode)){
+      cornify_add();
+    }
+  })
+</script>
+</body>
+</html>
